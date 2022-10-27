@@ -7,8 +7,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class urinalsTest {
 
@@ -32,5 +31,10 @@ public class urinalsTest {
     @Test
     public void checkStringTest4(){
         assertTrue(validityChecker.checkString(""));
+    }
+
+    @Test
+    public void checkUrinalValidityTest1(){
+        assertEquals(-1, validityChecker.checkUrinalValidity("110"));
     }
 }

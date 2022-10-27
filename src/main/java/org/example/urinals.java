@@ -14,20 +14,21 @@ public class urinals {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter choice: ");
         System.out.println("1. Check valid urinal count" + "\n" +
-                "2. Exit");
+                "-1. Exit");
         int input = sc.nextInt();
-        while(input != 2){
+        while(input != -1){
             if(input == 1){
                 System.out.println("Enter string: ");
                 String s = sc.next();
                 if(!validityChecker.checkString(s)){
-                    System.out.println("Invlaid string.");
+                    System.out.println("Invalid string.");
                 }
-
+                System.out.print("Valid urinal count: ");
+                System.out.println(validityChecker.checkUrinalValidity(s));
             }
             System.out.println("Enter choice: ");
             System.out.println("1. Check valid urinal count" + "\n" +
-                    "2. Exit");
+                    "-1. Exit");
             input = sc.nextInt();
         }
     }
