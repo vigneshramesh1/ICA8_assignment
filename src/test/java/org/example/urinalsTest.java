@@ -37,4 +37,9 @@ public class urinalsTest {
     public void checkUrinalValidityTest1(){
         assertEquals(-1, validityChecker.checkUrinalValidity("110"));
     }
+
+    @Test
+    public void checkUrinalValidityTest2(){
+        assertEquals(0, validityChecker.checkUrinalValidity(""));
+    }
 }

@@ -25,6 +25,11 @@ public class ValidityChecker {
             }
         }
 
+        // Return 0 for an empty input string
+        if(str.length() == 0){
+            return 0;
+        }
+
         // Remaining implementation to be added
         return 0;
     }
