@@ -30,6 +30,11 @@ public class ValidityChecker {
             return 0;
         }
 
+        // Return 1 if there is only one spot available
+        if(str.length() == 1 && str.charAt(0)=='0'){
+            return 1;
+        }
+
         // Remaining implementation to be added
         return 0;
     }
