@@ -62,4 +62,9 @@ public class UrinalsTest {
     public void checkUrinalValidityTest6(){
         assertEquals(   5, validityChecker.checkUrinalValidity("00000101000000"));
     }
+
+    @Test
+    public void checkUrinalValidityTest7(){
+        assertEquals(   6, validityChecker.checkUrinalValidity("000010001001000000"));
+    }
 }
