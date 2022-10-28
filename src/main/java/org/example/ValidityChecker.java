@@ -18,6 +18,8 @@ public class ValidityChecker {
     }
 
     int checkUrinalValidity(String str) {
+        int spots = 0;
+
         // Invalid input
         for (int i = 1; i < str.length(); i++) {
             if (str.charAt(i - 1) == '1' && str.charAt(i) == '1') {
@@ -30,12 +32,40 @@ public class ValidityChecker {
             return 0;
         }
 
-        // Return 1 if there is only one spot available
-        if(str.length() == 1 && str.charAt(0)=='0'){
-            return 1;
+        // Return 1 if there is only one spot available, 0 if no spots available
+        if (str.length() == 1) {
+            if (str.charAt(0) == '0') {
+                spots = 1;
+            }
+            return spots;
         }
 
-        // Remaining implementation to be added
-        return 0;
+        // split input on character '1' to find empty spots
+        String[] zeroes = str.split("1");
+
+        if(zeroes.length == 1 && zeroes[0].length() == str.length()){
+            spots=(zeroes[0].length()+1)/2;
+//            System.out.println("all zeroes:" + (zeroes[0].length()+1)/2);
+            return spots;
+        }
+
+        for(int i=0;i<zeroes.length;i++){
+            if(zeroes[i].equals("")){
+                continue;
+            }
+            if(i==0){
+                spots+=zeroes[i].length()/2;
+//                System.out.println("left zeroes:" + zeroes[i].length()/2);
+                continue;
+            }
+            if(i==zeroes.length-1 && str.charAt(str.length()-1)=='0'){
+                spots+=zeroes[i].length()/2;
+//                System.out.println("right zeroes:" + zeroes[i].length()/2);
+                continue;
+            }
+//            System.out.println("in between zeroes:" + (zeroes[i].length()-1)/2);
+            spots += (zeroes[i].length()-1)/2;
+        }
+        return spots;
     }
 }
