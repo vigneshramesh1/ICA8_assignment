@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class urinalsTest {
+public class UrinalsTest {
 
     ValidityChecker validityChecker = new ValidityChecker();
 
@@ -46,5 +46,10 @@ public class urinalsTest {
     @Test
     public void checkUrinalValidityTest3(){
         assertEquals(   1, validityChecker.checkUrinalValidity("0"));
+    }
+
+    @Test
+    public void checkUrinalValidityTest4(){
+        assertEquals(   0, validityChecker.checkUrinalValidity("1"));
     }
 }
