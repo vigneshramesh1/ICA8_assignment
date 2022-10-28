@@ -67,4 +67,29 @@ public class UrinalsTest {
     public void checkUrinalValidityTest7(){
         assertEquals(   6, validityChecker.checkUrinalValidity("000010001001000000"));
     }
+
+    @Test
+    public void checkUrinalValidityTest8(){
+        assertEquals(   0, validityChecker.checkUrinalValidity("1001"));
+    }
+
+    @Test
+    public void checkUrinalValidityTest9(){
+        assertEquals(   1, validityChecker.checkUrinalValidity("10001"));
+    }
+
+    @Test
+    public void checkUrinalValidityTest10(){
+        assertEquals(   2, validityChecker.checkUrinalValidity("0000"));
+    }
+
+    @Test
+    public void checkUrinalValidityTest11(){
+        assertEquals(   1, validityChecker.checkUrinalValidity("01000"));
+    }
+
+    @Test
+    public void checkUrinalValidityTest12(){
+        assertEquals(   -1, validityChecker.checkUrinalValidity("011"));
+    }
 }
